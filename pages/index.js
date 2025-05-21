@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import { Box, Button, Flex, Grid, Heading, Text, Link as ThemeLink } from "theme-ui";
 import NextLink from "next/link";
@@ -14,17 +14,15 @@ const navLinks = [
 function HackClubTypeAnimation({ onDone }) {
   const [typed, setTyped] = useState("");
   const text = "Hack Club";
-  const idx = useRef(0);
 
   useEffect(() => {
-    setTyped("");
-    idx.current = 0;
+    let idx = 0;
     let isMounted = true;
     function typeIt() {
       if (!isMounted) return;
-      if (idx.current < text.length) {
-        setTyped((prev) => prev + text[idx.current]);
-        idx.current += 1;
+      if (idx < text.length) {
+        setTyped(prev => prev + text[idx]);
+        idx += 1;
         setTimeout(typeIt, 120);
       } else {
         setTimeout(() => {
@@ -32,9 +30,10 @@ function HackClubTypeAnimation({ onDone }) {
         }, 900);
       }
     }
+    setTyped(""); // Clear at start
     typeIt();
     return () => { isMounted = false; };
-  }, [onDone]);
+  }, [onDone, text]);
 
   return (
     <Heading
@@ -45,7 +44,7 @@ function HackClubTypeAnimation({ onDone }) {
         fontWeight: 900,
         lineHeight: 1.1,
         letterSpacing: "-0.02em",
-        color: "primary", // <<< Make it visible!
+        color: "primary",
         minHeight: "1.3em",
         transition: "color 0.2s"
       }}
