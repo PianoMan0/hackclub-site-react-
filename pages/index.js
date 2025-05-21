@@ -147,7 +147,9 @@ export default function HomePage() {
                 fontWeight: 900,
                 lineHeight: 1.1,
                 letterSpacing: "-0.02em",
-                color: "background",
+                // color: "background", // was invisible on gradient!
+                color: "primary", // Make it red, or use "text" for black
+                textShadow: "0 2px 8px #fff8",
               }}
             >
               Welcome to the world of teenage hackers
