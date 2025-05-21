@@ -48,7 +48,7 @@ function HackClubTypeAnimation({ onDone }) {
 }
 
 export default function HomePage() {
-  const [showHero, setShowHero] = useState(false);
+  const [showHero, setShowHero] = useState(true);
   return (
     <>
       <Head>
