@@ -20,7 +20,7 @@ function HackClubTypeAnimation({ onDone }) {
     setTyped("");
     idx.current = 0;
     let isMounted = true;
-    const typeIt = () => {
+    function typeIt() {
       if (!isMounted) return;
       if (idx.current < text.length) {
         setTyped((prev) => prev + text[idx.current]);
@@ -29,27 +29,28 @@ function HackClubTypeAnimation({ onDone }) {
       } else {
         setTimeout(() => {
           if (isMounted) onDone();
-        }, 1000);
+        }, 900);
       }
-    };
+    }
     typeIt();
     return () => { isMounted = false; };
   }, [onDone]);
+
   return (
-    <pre
+    <Heading
+      as="h1"
       sx={{
-        fontSize: [5, 6, 7],
+        fontSize: [5, 7, 8],
+        mb: [3, 4],
+        fontWeight: 900,
+        lineHeight: 1.1,
+        letterSpacing: "-0.02em",
         color: "background",
-        textAlign: "center",
-        fontWeight: "bold",
-        letterSpacing: "0.05em",
-        m: 0,
-        transition: "opacity 1s"
+        minHeight: "1.3em"
       }}
-      aria-label="Hack Club type animation"
     >
       {typed}
-    </pre>
+    </Heading>
   );
 }
 
@@ -153,7 +154,9 @@ export default function HomePage() {
         }}
       >
         {!showHero ? (
-          <HackClubTypeAnimation onDone={() => setShowHero(true)} />
+          <>
+            <HackClubTypeAnimation onDone={() => setShowHero(true)} />
+          </>
         ) : (
           <Box>
             <Heading
