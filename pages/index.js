@@ -14,7 +14,7 @@ const navLinks = [
 function HackClubTypeAnimation({ onDone }) {
   const text = "Hack Club";
   const [typed, setTyped] = useState("");
-  
+
   useEffect(() => {
     setTyped(""); // Clear at start
     let idx = 0;
@@ -138,7 +138,7 @@ export default function HomePage() {
         {!showHero ? (
           <HackClubTypeAnimation onDone={() => setShowHero(true)} />
         ) : (
-          <Box>
+          <Box sx={{ width: "100%" }}>
             <Heading
               as="h1"
               sx={{
@@ -222,47 +222,84 @@ export default function HomePage() {
 
       {/* About Section */}
       <Box as="section" id="about" sx={{ py: [5, 6], bg: "muted" }}>
-        <Box sx={{ maxWidth: 900, mx: "auto" }}>
+        <Box sx={{ maxWidth: 1000, mx: "auto" }}>
           <Heading as="h2" sx={{
             textAlign: "center",
             fontSize: [4, 5],
             mb: 5,
             fontWeight: 900,
-            color: "text"
+            color: "text",
+            letterSpacing: "-0.01em",
+            textShadow: "0 2px 16px #ff8c3722, 0 1px 2px #ec375033"
           }}>
             For teenagers, by teenagers
           </Heading>
-          <Grid columns={[1, 2, 3]} gap={4} className="features-grid">
+          <Grid
+            columns={[1, 2, 3]}
+            gap={4}
+            className="features-grid"
+            sx={{
+              boxShadow: "0 8px 32px #ec375008",
+              justifyItems: "center"
+            }}
+          >
             <Box sx={{
               bg: "background",
-              p: 4,
-              borderRadius: 6,
-              boxShadow: "0 2px 12px rgba(0,0,0,0.04)"
+              p: [3, 4],
+              borderRadius: 12,
+              boxShadow: "0 8px 32px #ec375022, 0 2px 4px #ff8c3722",
+              transition: "box-shadow 0.2s, transform 0.2s",
+              "&:hover": {
+                boxShadow: "0 12px 48px #ff8c3755, 0 4px 8px #ec375044",
+                transform: "translateY(-4px) scale(1.03)"
+              },
+              minHeight: 180,
+              maxWidth: 320,
+              textAlign: "left",
+              border: "1.5px solid #f9fafc",
             }}>
-              <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 2, color: "text" }}>Start a Club</Heading>
-              <Text sx={{ color: "text" }}>
+              <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 2, color: "primary" }}>Start a Club</Heading>
+              <Text sx={{ color: "text", fontSize: 2 }}>
                 Build a coding club at your high school with support from the Hack Club community.
               </Text>
             </Box>
             <Box sx={{
               bg: "background",
-              p: 4,
-              borderRadius: 6,
-              boxShadow: "0 2px 12px rgba(0,0,0,0.04)"
+              p: [3, 4],
+              borderRadius: 12,
+              boxShadow: "0 8px 32px #ec375022, 0 2px 4px #ff8c3722",
+              transition: "box-shadow 0.2s, transform 0.2s",
+              "&:hover": {
+                boxShadow: "0 12px 48px #ff8c3755, 0 4px 8px #ec375044",
+                transform: "translateY(-4px) scale(1.03)"
+              },
+              minHeight: 180,
+              maxWidth: 320,
+              textAlign: "left",
+              border: "1.5px solid #f9fafc",
             }}>
-              <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 2, color: "text" }}>Global Community</Heading>
-              <Text sx={{ color: "text" }}>
+              <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 2, color: "primary" }}>Global Community</Heading>
+              <Text sx={{ color: "text", fontSize: 2 }}>
                 Join thousands of students worldwide in making, learning, and building together.
               </Text>
             </Box>
             <Box sx={{
               bg: "background",
-              p: 4,
-              borderRadius: 6,
-              boxShadow: "0 2px 12px rgba(0,0,0,0.04)"
+              p: [3, 4],
+              borderRadius: 12,
+              boxShadow: "0 8px 32px #ec375022, 0 2px 4px #ff8c3722",
+              transition: "box-shadow 0.2s, transform 0.2s",
+              "&:hover": {
+                boxShadow: "0 12px 48px #ff8c3755, 0 4px 8px #ec375044",
+                transform: "translateY(-4px) scale(1.03)"
+              },
+              minHeight: 180,
+              maxWidth: 320,
+              textAlign: "left",
+              border: "1.5px solid #f9fafc",
             }}>
-              <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 2, color: "text" }}>Resources & Workshops</Heading>
-              <Text sx={{ color: "text" }}>
+              <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 2, color: "primary" }}>Resources & Workshops</Heading>
+              <Text sx={{ color: "text", fontSize: 2 }}>
                 Access creative workshops, events, and resources to level up your skills.
               </Text>
             </Box>
