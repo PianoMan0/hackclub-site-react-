@@ -45,8 +45,9 @@ function HackClubTypeAnimation({ onDone }) {
         fontWeight: 900,
         lineHeight: 1.1,
         letterSpacing: "-0.02em",
-        color: "background",
-        minHeight: "1.3em"
+        color: "primary", // <<< Make it visible!
+        minHeight: "1.3em",
+        transition: "color 0.2s"
       }}
     >
       {typed}
@@ -141,7 +142,7 @@ export default function HomePage() {
         sx={{
           width: "100%",
           minHeight: ["60vh", "70vh", "70vh"],
-          pt: [120, 140, 180], // nav height + spacing
+          pt: [120, 140, 180],
           pb: [5, 6],
           bg: "linear-gradient(120deg, #ec3750 0%, #ff8c37 100%)",
           display: "flex",
@@ -154,9 +155,7 @@ export default function HomePage() {
         }}
       >
         {!showHero ? (
-          <>
-            <HackClubTypeAnimation onDone={() => setShowHero(true)} />
-          </>
+          <HackClubTypeAnimation onDone={() => setShowHero(true)} />
         ) : (
           <Box>
             <Heading
