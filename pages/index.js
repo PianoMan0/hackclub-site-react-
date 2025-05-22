@@ -48,6 +48,26 @@ function HackClubTypeAnimation({ onDone }) {
   );
 }
 
+const heroButtonSx = {
+  bg: "background",
+  color: "primary",
+  fontWeight: "bold",
+  fontSize: [3, 4],
+  px: [4, 5],
+  py: [3, 3],
+  borderRadius: 999,
+  boxShadow: "0 2px 12px #0001",
+  border: "2px solid",
+  borderColor: "primary",
+  transition: "transform 0.14s, background 0.2s, color 0.2s, border-color 0.2s",
+  "&:hover": {
+    bg: "primary",
+    color: "background",
+    borderColor: "primary",
+    transform: "scale(1.06)"
+  }
+};
+
 export default function HomePage() {
   const [showHero, setShowHero] = useState(false);
 
@@ -147,7 +167,7 @@ export default function HomePage() {
                 fontWeight: 900,
                 lineHeight: 1.1,
                 letterSpacing: "-0.02em",
-                color: "primary", // Red
+                color: "primary",
                 textShadow: "0 2px 8px #fff8",
               }}
             >
@@ -159,7 +179,7 @@ export default function HomePage() {
                 fontSize: [3, 4],
                 mb: [4, 5],
                 fontWeight: 500,
-                color: "text", // Black
+                color: "text",
                 opacity: 0.95
               }}
             >
@@ -176,44 +196,14 @@ export default function HomePage() {
               <Button
                 as="a"
                 href="https://hackclub.com/slack"
-                sx={{
-                  bg: "background",
-                  color: "primary",
-                  fontWeight: "bold",
-                  fontSize: [3, 4],
-                  px: [4, 5],
-                  py: [3, 3],
-                  borderRadius: 999,
-                  boxShadow: "0 2px 12px #0001",
-                  mr: [0, 3],
-                  mb: [2, 0],
-                  transition: "transform 0.14s",
-                  "&:hover": { transform: "scale(1.06)" }
-                }}
+                sx={heroButtonSx}
               >
                 Join the Slack
               </Button>
               <Button
                 as="a"
                 href="https://apply.hackclub.com/"
-                sx={{
-                  bg: "background", // Make button background white
-                  color: "primary", // Make text red and always visible
-                  border: "2px solid",
-                  borderColor: "primary",
-                  fontWeight: "bold",
-                  fontSize: [3, 4],
-                  px: [4, 5],
-                  py: [3, 3],
-                  borderRadius: 999,
-                  boxShadow: "0 2px 12px #0001",
-                  transition: "transform 0.14s, background 0.2s, color 0.2s, border-color 0.2s",
-                  "&:hover": {
-                    bg: "primary",
-                    color: "background",
-                    borderColor: "primary"
-                  }
-                }}
+                sx={heroButtonSx}
               >
                 Start a Club
               </Button>
