@@ -165,29 +165,28 @@ function FeaturedProject({ project }) {
           }}>
             {project.title}
           </Heading>
-          <Text sx={{ fontSize: [2, 3], mb: 3, lineHeight: 1.6, display: "inline" }}>
+          <Text sx={{ fontSize: [2, 3], mb: 0, lineHeight: 1.6, display: "block" }}>
             {project.description}
           </Text>
-          <span style={{ display: "inline-block", marginLeft: 12 }}>
-            <ThemeLink
-              href={project.link}
-              target="_blank"
-              rel="noopener"
-              sx={{
-                color: "primary",
-                fontWeight: "bold",
-                textDecoration: "underline",
-                fontSize: [2, 3],
-                transition: "color 0.2s, border-color 0.2s",
-                ":hover": {
-                  color: "text",
-                  borderColor: "text"
-                }
-              }}
-            >
-              {project.linkLabel}
-            </ThemeLink>
-          </span>
+          <br />
+          <ThemeLink
+            href={project.link}
+            target="_blank"
+            rel="noopener"
+            sx={{
+              color: "primary",
+              fontWeight: "bold",
+              textDecoration: "underline",
+              fontSize: [2, 3],
+              transition: "color 0.2s, border-color 0.2s",
+              ":hover": {
+                color: "text",
+                borderColor: "text"
+              }
+            }}
+          >
+            {project.linkLabel}
+          </ThemeLink>
         </Box>
       </Flex>
     </Box>
