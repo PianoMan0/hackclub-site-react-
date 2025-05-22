@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import { Box, Button, Flex, Grid, Heading, Text, Link as ThemeLink } from "theme-ui";
+import { Box, Button, Flex, Grid, Heading, Text, Link as ThemeLink, Image } from "theme-ui";
 import NextLink from "next/link";
 
 const navLinks = [
@@ -9,6 +9,24 @@ const navLinks = [
   { href: "https://workshops.hackclub.com/", label: "Workshops" },
   { href: "https://hackclub.com/hackathons/", label: "Hackathons" },
   { href: "https://hackclub.com/philosophy/", label: "Philosophy" },
+];
+
+// I'll replace this with new projects frequently!
+const FEATURED_PROJECTS = [
+  {
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/96ead81a7069ff06ad0c206883fa29b9fd4b4e41_image.png",
+    title: "Lucas 11 Personal Website",
+    description: "An personal website for Lucas11 that it has all of their personal projects!",
+    link: "https://lucas11.dev/",
+    linkLabel: "Check it out →"
+  },
+  {
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/33954a9dcbc95476ecf5776e5f4687694bf0d0df_image.png",
+    title: "TBHandheld",
+    description: "A ESP8266 based Gaming Handheld that has support for IoT applications too!",
+    link: "https://highway.hackclub.com/",
+    linkLabel: "Learn how to make your own hardware projects →"
+  },
 ];
 
 function HackClubTypeAnimation({ onDone }) {
@@ -67,6 +85,86 @@ const heroButtonSx = {
     transform: "scale(1.06)"
   }
 };
+
+function FeaturedProject({ project }) {
+  return (
+    <Box
+      as="section"
+      sx={{
+        py: [6, 7],
+        bg: "background",
+        color: "text",
+        textAlign: "center",
+        borderTop: "1px solid #f2f2f5",
+        borderBottom: "1px solid #f2f2f5"
+      }}
+    >
+      <Heading as="h2" sx={{
+        fontSize: [4, 5],
+        fontWeight: 900,
+        mb: 3
+      }}>
+        Featured Project
+      </Heading>
+      <Text sx={{
+        fontSize: [2, 3],
+        mb: [4, 5],
+        maxWidth: 600,
+        mx: "auto"
+      }}>
+        Check out one of the awesome things built by Hack Clubbers!
+      </Text>
+      <Flex sx={{
+        flexDirection: ["column", "row"],
+        alignItems: "center",
+        justifyContent: "center",
+        gap: [4, 5],
+        maxWidth: 900,
+        mx: "auto"
+      }}>
+        <Image
+          src={project.image}
+          alt={project.title}
+          sx={{
+            width: ["100%", 340],
+            height: ["auto", 220],
+            objectFit: "cover",
+            borderRadius: 10,
+            boxShadow: "0 4px 24px #0001"
+          }}
+        />
+        <Box sx={{ textAlign: "left", maxWidth: 420 }}>
+          <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 2 }}>{project.title}</Heading>
+          <Text sx={{ fontSize: 2, mb: 2 }}>
+            {project.description}
+          </Text>
+          <ThemeLink
+            href={project.link}
+            target="_blank"
+            rel="noopener"
+            sx={{
+              display: "inline-block",
+              mt: 2,
+              color: "primary",
+              fontWeight: "bold",
+              textDecoration: "none",
+              fontSize: 2,
+              borderBottom: "2px solid",
+              borderColor: "primary",
+              transition: "color 0.2s, border-color 0.2s",
+              ":hover": {
+                color: "text",
+                borderColor: "text"
+              }
+            }}
+          >
+            {project.linkLabel}
+          </ThemeLink>
+        </Box>
+      </Flex>
+    </Box>
+  );
+}
 
 function CommunityStats() {
   return (
@@ -173,13 +271,13 @@ function Footer() {
             </Heading>
             <Box as="ul" sx={{ listStyle: "none", p: 0, m: 0, color: "#b6bac1" }}>
               <li>
-                <ThemeLink href="https://hackclub.com/jobs/" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Jobs</ThemeLink>
+                <ThemeLink href="https://jobs.hackclub.com" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Jobs</ThemeLink>
               </li>
               <li>
                 <ThemeLink href="https://hackclub.com/slack" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Slack</ThemeLink>
               </li>
               <li>
-                <ThemeLink href="https://hcb.hackclub.com/donations/start/hq?utm_source=site&utm_medium=internal&utm_campaign=philanthropy_page&utm_content=hero_button" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Donate</ThemeLink>
+                <ThemeLink href="https://hackclub.com/donate" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Donate</ThemeLink>
               </li>
               <li>
                 <ThemeLink href="https://hcb.hackclub.com/" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>HCB</ThemeLink>
@@ -195,10 +293,10 @@ function Footer() {
                 <ThemeLink href="https://github.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>GitHub</ThemeLink>
               </li>
               <li>
-                <ThemeLink href="https://youtube.com/c/hackclubhq" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Youtube</ThemeLink>
+                <ThemeLink href="https://youtube.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Youtube</ThemeLink>
               </li>
               <li>
-                <ThemeLink href="https://x.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Twitter</ThemeLink>
+                <ThemeLink href="https://twitter.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Twitter</ThemeLink>
               </li>
               <li>
                 <ThemeLink href="https://instagram.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Instagram</ThemeLink>
@@ -227,6 +325,9 @@ function Footer() {
 
 export default function HomePage() {
   const [showHero, setShowHero] = useState(false);
+
+  // Pick a random featured project on each reload!
+  const randomProject = FEATURED_PROJECTS[Math.floor(Math.random() * FEATURED_PROJECTS.length)];
 
   return (
     <>
@@ -454,10 +555,11 @@ export default function HomePage() {
           </Grid>
         </Box>
       </Box>
-                  
+
+      <FeaturedProject project={randomProject} />
+
       <CommunityStats />
 
-      {/* Footer */}
       <Footer />
     </>
   );
