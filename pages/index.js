@@ -173,13 +173,13 @@ function Footer() {
             </Heading>
             <Box as="ul" sx={{ listStyle: "none", p: 0, m: 0, color: "#b6bac1" }}>
               <li>
-                <ThemeLink href="https://jobs.hackclub.com" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Jobs</ThemeLink>
+                <ThemeLink href="https://hackclub.com/jobs/" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Jobs</ThemeLink>
               </li>
               <li>
                 <ThemeLink href="https://hackclub.com/slack" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Slack</ThemeLink>
               </li>
               <li>
-                <ThemeLink href="https://hackclub.com/donate" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Donate</ThemeLink>
+                <ThemeLink href="https://hcb.hackclub.com/donations/start/hq?utm_source=site&utm_medium=internal&utm_campaign=philanthropy_page&utm_content=hero_button" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Donate</ThemeLink>
               </li>
               <li>
                 <ThemeLink href="https://hcb.hackclub.com/" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>HCB</ThemeLink>
@@ -195,10 +195,10 @@ function Footer() {
                 <ThemeLink href="https://github.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>GitHub</ThemeLink>
               </li>
               <li>
-                <ThemeLink href="https://youtube.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Youtube</ThemeLink>
+                <ThemeLink href="https://youtube.com/c/hackclubhq" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Youtube</ThemeLink>
               </li>
               <li>
-                <ThemeLink href="https://twitter.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Twitter</ThemeLink>
+                <ThemeLink href="https://x.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Twitter</ThemeLink>
               </li>
               <li>
                 <ThemeLink href="https://instagram.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Instagram</ThemeLink>
@@ -232,7 +232,6 @@ export default function HomePage() {
     <>
       <Head>
         <title>Hack Club - A Home For High School Hackers</title>
-        {/* ...meta and favicon tags unchanged... */}
       </Head>
 
       {/* Navbar */}
@@ -455,8 +454,7 @@ export default function HomePage() {
           </Grid>
         </Box>
       </Box>
-
-      {/* Community Stats Section (now below "For teenagers" section) */}
+                  
       <CommunityStats />
 
       {/* Footer */}
