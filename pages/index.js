@@ -68,6 +68,163 @@ const heroButtonSx = {
   }
 };
 
+function CommunityStats() {
+  return (
+    <Box
+      as="section"
+      sx={{
+        py: [6, 7],
+        bg: "primary",
+        color: "background",
+        textAlign: "center"
+      }}
+    >
+      <Heading as="h2" sx={{
+        fontSize: [4, 5, 6],
+        fontWeight: 900,
+        mb: [3, 4]
+      }}>
+        Join Our Vibrant Community
+      </Heading>
+      <Text sx={{
+        fontSize: [2, 3],
+        mb: [5, 5, 6],
+        display: "block"
+      }}>
+        Connect with fellow hackers, share your projects, and learn together
+      </Text>
+      <Grid
+        columns={[1, 3, 3]}
+        gap={[4, 5]}
+        sx={{
+          maxWidth: 900,
+          mx: "auto",
+          alignItems: "center"
+        }}
+      >
+        <Box>
+          <Text as="div" sx={{
+            fontWeight: 900,
+            fontSize: [5, 6],
+            lineHeight: 1.1
+          }}>
+            600<span sx={{ fontSize: [4, 5] }}>+</span>
+          </Text>
+          <Text sx={{ fontSize: [2, 3], mt: 2, fontWeight: 500 }}>
+            Active Clubs
+          </Text>
+        </Box>
+        <Box>
+          <Text as="div" sx={{
+            fontWeight: 900,
+            fontSize: [5, 6],
+            lineHeight: 1.1
+          }}>
+            30,000<span sx={{ fontSize: [4, 5] }}>+</span>
+          </Text>
+          <Text sx={{ fontSize: [2, 3], mt: 2, fontWeight: 500 }}>
+            Members
+          </Text>
+        </Box>
+        <Box>
+          <Text as="div" sx={{
+            fontWeight: 900,
+            fontSize: [5, 6],
+            lineHeight: 1.1
+          }}>
+            10k<span sx={{ fontSize: [4, 5] }}>+</span>
+          </Text>
+          <Text sx={{ fontSize: [2, 3], mt: 2, fontWeight: 500 }}>
+            Projects Created
+          </Text>
+        </Box>
+      </Grid>
+    </Box>
+  );
+}
+
+function Footer() {
+  return (
+    <Box
+      as="footer"
+      sx={{
+        bg: "#18181d",
+        color: "#fff",
+        pt: [5, 6],
+        pb: 4,
+        mt: 0,
+        fontSize: 2
+      }}
+    >
+      <Box sx={{ maxWidth: 1400, mx: "auto", px: [3, 4] }}>
+        <Grid columns={[1, 3, 3]} gap={5} sx={{ mb: 4 }}>
+          <Box>
+            <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 3, color: "#fff" }}>
+              Hack Club
+            </Heading>
+            <Text sx={{ color: "#fff", fontSize: 2 }}>
+              A nonprofit network of high school coding clubs<br />
+              and makers around the world.
+            </Text>
+          </Box>
+          <Box>
+            <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 3, color: "#fff" }}>
+              Links
+            </Heading>
+            <Box as="ul" sx={{ listStyle: "none", p: 0, m: 0, color: "#b6bac1" }}>
+              <li>
+                <ThemeLink href="https://jobs.hackclub.com" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Jobs</ThemeLink>
+              </li>
+              <li>
+                <ThemeLink href="https://hackclub.com/slack" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Slack</ThemeLink>
+              </li>
+              <li>
+                <ThemeLink href="https://hackclub.com/donate" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Donate</ThemeLink>
+              </li>
+              <li>
+                <ThemeLink href="https://hcb.hackclub.com/" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>HCB</ThemeLink>
+              </li>
+            </Box>
+          </Box>
+          <Box>
+            <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 3, color: "#fff" }}>
+              Connect
+            </Heading>
+            <Box as="ul" sx={{ listStyle: "none", p: 0, m: 0, color: "#b6bac1" }}>
+              <li>
+                <ThemeLink href="https://github.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>GitHub</ThemeLink>
+              </li>
+              <li>
+                <ThemeLink href="https://youtube.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Youtube</ThemeLink>
+              </li>
+              <li>
+                <ThemeLink href="https://twitter.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Twitter</ThemeLink>
+              </li>
+              <li>
+                <ThemeLink href="https://instagram.com/hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Instagram</ThemeLink>
+              </li>
+              <li>
+                <ThemeLink href="https://www.figma.com/@hackclub" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Figma</ThemeLink>
+              </li>
+            </Box>
+          </Box>
+        </Grid>
+        <Box
+          sx={{
+            borderTop: "1px solid #31313a",
+            pt: 3,
+            textAlign: "center",
+            color: "#b6bac1",
+            fontSize: 2
+          }}
+        >
+          © {new Date().getFullYear()} Hack Club. 501(c)(3) nonprofit (EIN: 81-2908499)
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+
 export default function HomePage() {
   const [showHero, setShowHero] = useState(false);
 
@@ -212,78 +369,6 @@ export default function HomePage() {
         )}
       </Box>
 
-      {/* Community Stats Section */}
-      <Box
-        as="section"
-        sx={{
-          py: [6, 7],
-          bg: "primary",
-          color: "background",
-          textAlign: "center"
-        }}
-      >
-        <Heading as="h2" sx={{
-          fontSize: [4, 5, 6],
-          fontWeight: 900,
-          mb: [3, 4]
-        }}>
-          Join Our Vibrant Community
-        </Heading>
-        <Text sx={{
-          fontSize: [2, 3],
-          mb: [5, 5, 6],
-          display: "block"
-        }}>
-          Connect with fellow hackers, share your projects, and learn together
-        </Text>
-        <Grid
-          columns={[1, 3, 3]}
-          gap={[4, 5]}
-          sx={{
-            maxWidth: 900,
-            mx: "auto",
-            alignItems: "center"
-          }}
-        >
-          <Box>
-            <Text as="div" sx={{
-              fontWeight: 900,
-              fontSize: [5, 6],
-              lineHeight: 1.1
-            }}>
-              600<span sx={{ fontSize: [4, 5] }}>+</span>
-            </Text>
-            <Text sx={{ fontSize: [2, 3], mt: 2, fontWeight: 500 }}>
-              Active Clubs
-            </Text>
-          </Box>
-          <Box>
-            <Text as="div" sx={{
-              fontWeight: 900,
-              fontSize: [5, 6],
-              lineHeight: 1.1
-            }}>
-              30,000<span sx={{ fontSize: [4, 5] }}>+</span>
-            </Text>
-            <Text sx={{ fontSize: [2, 3], mt: 2, fontWeight: 500 }}>
-              Members
-            </Text>
-          </Box>
-          <Box>
-            <Text as="div" sx={{
-              fontWeight: 900,
-              fontSize: [5, 6],
-              lineHeight: 1.1
-            }}>
-              10k<span sx={{ fontSize: [4, 5] }}>+</span>
-            </Text>
-            <Text sx={{ fontSize: [2, 3], mt: 2, fontWeight: 500 }}>
-              Projects Created
-            </Text>
-          </Box>
-        </Grid>
-      </Box>
-
       {/* About Section */}
       <Box as="section" id="about" sx={{ py: [5, 6], bg: "muted" }}>
         <Box sx={{ maxWidth: 1000, mx: "auto" }}>
@@ -370,6 +455,12 @@ export default function HomePage() {
           </Grid>
         </Box>
       </Box>
+
+      {/* Community Stats Section (now below "For teenagers" section) */}
+      <CommunityStats />
+
+      {/* Footer */}
+      <Footer />
     </>
   );
 }
