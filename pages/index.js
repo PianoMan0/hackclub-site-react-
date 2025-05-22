@@ -339,7 +339,13 @@ function Footer() {
                 <ThemeLink href="https://hackclub.com/slack" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Slack</ThemeLink>
               </li>
               <li>
+                <ThemeLink href="https://hackclub.com/team" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Team and Board</ThemeLink>
+              </li>
+              <li>
                 <ThemeLink href="https://hackclub.com/donate" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Donate</ThemeLink>
+              </li>
+              <li>
+                <ThemeLink href="https://hackclub.com/press" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Press Inquiries</ThemeLink>
               </li>
               <li>
                 <ThemeLink href="https://hcb.hackclub.com/" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>HCB</ThemeLink>
