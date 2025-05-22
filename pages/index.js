@@ -30,6 +30,13 @@ const FEATURED_PROJECTS = [
     linkLabel: "Learn how to make your own bookmarklet →"
   },
   {
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4cf116ff6ce6c5dc8329fba8ee36123b1b815341_image.png",
+    title: "Hackatime Badge",
+    description: "An API that takes in a Hackatime username and project name (Hackatime is how Hack Clubbers track their coding time!), and outputs a Shields.io badge with the time spent on that project, with lots of customization options!",
+    link: "https://github.com/pbhak/hackatime-badge",
+    linkLabel: "Check it out →"
+  },
+  {
     image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/33954a9dcbc95476ecf5776e5f4687694bf0d0df_image.png",
     title: "TBHandheld",
     description: "A ESP8266 based Gaming Handheld that has support for IoT applications too!",
