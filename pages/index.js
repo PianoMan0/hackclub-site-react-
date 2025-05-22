@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Box, Button, Flex, Grid, Heading, Text, Link as ThemeLink, Image } from "theme-ui";
 import NextLink from "next/link";
 
+// --------- NAV LINKS ----------
 const navLinks = [
   { href: "https://hackclub.com/clubs/", label: "Clubs" },
   { href: "https://workshops.hackclub.com/", label: "Workshops" },
@@ -11,6 +12,7 @@ const navLinks = [
   { href: "https://hackclub.com/philosophy/", label: "Philosophy" },
 ];
 
+// --------- FEATURED PROJECTS (EDITABLE) ----------
 // I'll replace this with new projects frequently!
 const FEATURED_PROJECTS = [
   {
@@ -29,12 +31,13 @@ const FEATURED_PROJECTS = [
   },
 ];
 
+// --------- ANIMATION ----------
 function HackClubTypeAnimation({ onDone }) {
   const text = "Hack Club";
   const [typed, setTyped] = useState("");
 
   useEffect(() => {
-    setTyped(""); // Clear at start
+    setTyped("");
     let idx = 0;
     const interval = setInterval(() => {
       setTyped(text.slice(0, idx + 1));
@@ -66,6 +69,7 @@ function HackClubTypeAnimation({ onDone }) {
   );
 }
 
+// --------- HERO BUTTON STYLE ----------
 const heroButtonSx = {
   bg: "background",
   color: "primary",
@@ -86,6 +90,7 @@ const heroButtonSx = {
   }
 };
 
+// --------- FEATURED PROJECT COMPONENT ----------
 function FeaturedProject({ project }) {
   return (
     <Box
@@ -100,17 +105,19 @@ function FeaturedProject({ project }) {
       }}
     >
       <Heading as="h2" sx={{
-        fontSize: [4, 5],
+        fontSize: [5, 6],
         fontWeight: 900,
-        mb: 3
+        mb: [3, 4],
+        mt: 0,
+        letterSpacing: "-0.04em"
       }}>
         Featured Project
       </Heading>
       <Text sx={{
-        fontSize: [2, 3],
-        mb: [4, 5],
-        maxWidth: 600,
-        mx: "auto"
+        fontSize: [3, 4],
+        mb: [5, 6],
+        display: "block",
+        fontFamily: "serif"
       }}>
         Check out one of the awesome things built by Hack Clubbers!
       </Text>
@@ -118,54 +125,76 @@ function FeaturedProject({ project }) {
         flexDirection: ["column", "row"],
         alignItems: "center",
         justifyContent: "center",
-        gap: [4, 5],
-        maxWidth: 900,
-        mx: "auto"
+        gap: [5, 6],
+        maxWidth: 1100,
+        mx: "auto",
+        px: [3, 4],
+        py: [2, 3]
       }}>
-        <Image
-          src={project.image}
-          alt={project.title}
-          sx={{
-            width: ["100%", 340],
-            height: ["auto", 220],
-            objectFit: "cover",
-            borderRadius: 10,
-            boxShadow: "0 4px 24px #0001"
-          }}
-        />
-        <Box sx={{ textAlign: "left", maxWidth: 420 }}>
-          <Heading as="h3" sx={{ fontSize: 3, fontWeight: 700, mb: 2 }}>{project.title}</Heading>
-          <Text sx={{ fontSize: 2, mb: 2 }}>
+        <Box sx={{
+          width: ["100%", 440],
+          height: ["auto", 280],
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          bg: "#06081c",
+          borderRadius: 18,
+          boxShadow: "0 8px 48px #0001",
+          overflow: "hidden",
+          minHeight: [220, 280],
+          mb: [4, 0]
+        }}>
+          <Image
+            src={project.image}
+            alt={project.title}
+            sx={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              borderRadius: 12,
+              boxShadow: "none"
+            }}
+          />
+        </Box>
+        <Box sx={{ textAlign: "left", maxWidth: 500, ml: [0, 4] }}>
+          <Heading as="h3" sx={{
+            fontSize: [3, 4],
+            fontWeight: 700,
+            mb: 3,
+            color: "text"
+          }}>
+            {project.title}
+          </Heading>
+          <Text sx={{ fontSize: [2, 3], mb: 3, lineHeight: 1.6, display: "inline" }}>
             {project.description}
           </Text>
-          <ThemeLink
-            href={project.link}
-            target="_blank"
-            rel="noopener"
-            sx={{
-              display: "inline-block",
-              mt: 2,
-              color: "primary",
-              fontWeight: "bold",
-              textDecoration: "none",
-              fontSize: 2,
-              borderBottom: "2px solid",
-              borderColor: "primary",
-              transition: "color 0.2s, border-color 0.2s",
-              ":hover": {
-                color: "text",
-                borderColor: "text"
-              }
-            }}
-          >
-            {project.linkLabel}
-          </ThemeLink>
+          <span style={{ display: "inline-block", marginLeft: 12 }}>
+            <ThemeLink
+              href={project.link}
+              target="_blank"
+              rel="noopener"
+              sx={{
+                color: "primary",
+                fontWeight: "bold",
+                textDecoration: "underline",
+                fontSize: [2, 3],
+                transition: "color 0.2s, border-color 0.2s",
+                ":hover": {
+                  color: "text",
+                  borderColor: "text"
+                }
+              }}
+            >
+              {project.linkLabel}
+            </ThemeLink>
+          </span>
         </Box>
       </Flex>
     </Box>
   );
 }
 
+// --------- COMMUNITY STATS COMPONENT ----------
 function CommunityStats() {
   return (
     <Box
@@ -241,6 +270,7 @@ function CommunityStats() {
   );
 }
 
+// --------- FOOTER COMPONENT ----------
 function Footer() {
   return (
     <Box
@@ -323,10 +353,11 @@ function Footer() {
   );
 }
 
+// --------- MAIN PAGE ----------
 export default function HomePage() {
   const [showHero, setShowHero] = useState(false);
 
-  // Pick a random featured project on each reload!
+  // Pick a random featured project on each reload
   const randomProject = FEATURED_PROJECTS[Math.floor(Math.random() * FEATURED_PROJECTS.length)];
 
   return (
@@ -556,10 +587,13 @@ export default function HomePage() {
         </Box>
       </Box>
 
+      {/* Featured Project Section (random each reload) */}
       <FeaturedProject project={randomProject} />
 
+      {/* Community Stats Section */}
       <CommunityStats />
 
+      {/* Footer */}
       <Footer />
     </>
   );
