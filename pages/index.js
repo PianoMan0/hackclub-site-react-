@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import { Box, Button, Flex, Grid, Heading, Text, Link as ThemeLink, Image } from "theme-ui";
+import { Box, Button, Flex, Grid, Heading, Text, Link as ThemeLink, Image, useColorMode } from "theme-ui";
 import NextLink from "next/link";
 
 // --------- NAV LINKS ----------
@@ -98,7 +98,8 @@ const heroButtonSx = {
 };
 
 // --------- DARK MODE TOGGLE ----------
-function DarkModeToggle({ colorMode, setColorMode }) {
+function DarkModeToggle() {
+  const [colorMode, setColorMode] = useColorMode();
   return (
     <Button
       aria-label="Toggle dark mode"
@@ -123,7 +124,7 @@ function DarkModeToggle({ colorMode, setColorMode }) {
   );
 }
 
-// --------- FEATURED PROJECTS ----------
+// --------- FEATURED PROJECT COMPONENT ----------
 function FeaturedProject({ project }) {
   return (
     <Box
@@ -226,7 +227,7 @@ function FeaturedProject({ project }) {
   );
 }
 
-// --------- COMMUNITY STATS ----------
+// --------- COMMUNITY STATS COMPONENT ----------
 function CommunityStats() {
   return (
     <Box
@@ -302,7 +303,7 @@ function CommunityStats() {
   );
 }
 
-// --------- FOOTER ----------
+// --------- FOOTER COMPONENT ----------
 function Footer() {
   return (
     <Box
@@ -339,13 +340,7 @@ function Footer() {
                 <ThemeLink href="https://hackclub.com/slack" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Slack</ThemeLink>
               </li>
               <li>
-                <ThemeLink href="https://hackclub.com/team" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Team and Board</ThemeLink>
-              </li>
-              <li>
                 <ThemeLink href="https://hackclub.com/donate" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Donate</ThemeLink>
-              </li>
-              <li>
-                <ThemeLink href="https://hackclub.com/press" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>Press Inquiries</ThemeLink>
               </li>
               <li>
                 <ThemeLink href="https://hcb.hackclub.com/" target="_blank" rel="noopener" sx={{ color: "#b6bac1", textDecoration: "none", ":hover": { color: "#fff" } }}>HCB</ThemeLink>
@@ -392,7 +387,7 @@ function Footer() {
 }
 
 // --------- MAIN PAGE ----------
-export default function HomePage({ colorMode, setColorMode }) {
+export default function HomePage() {
   const [showHero, setShowHero] = useState(false);
 
   // Pick a random featured project on each reload
@@ -403,7 +398,8 @@ export default function HomePage({ colorMode, setColorMode }) {
       <Head>
         <title>Hack Club - A Home For High School Hackers</title>
       </Head>
-    
+
+      {/* Navbar */}
       <Box as="nav" sx={{
         bg: "background",
         boxShadow: "0 2px 4px rgba(0,0,0,0.08)",
@@ -459,7 +455,7 @@ export default function HomePage({ colorMode, setColorMode }) {
               </ThemeLink>
             </li>
             <li>
-              <DarkModeToggle colorMode={colorMode} setColorMode={setColorMode} />
+              <DarkModeToggle />
             </li>
           </Flex>
         </Flex>
