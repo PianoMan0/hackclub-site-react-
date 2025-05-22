@@ -24,7 +24,7 @@ const FEATURED_PROJECTS = [
   },
   {
     image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/160c7c66b5509c2c4297a60336ccaab163499552_image.png",
-    title: "Aga Tool",
+    title: "AgaTool",
     description: "A multitool bookmarklet that you can use to do... anything!",
     link: "http://hacklet.hackclub.com",
     linkLabel: "Learn how to make your own bookmarklet →"
