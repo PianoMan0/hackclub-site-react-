@@ -147,8 +147,7 @@ export default function HomePage() {
                 fontWeight: 900,
                 lineHeight: 1.1,
                 letterSpacing: "-0.02em",
-                // color: "background", // was invisible on gradient!
-                color: "primary", // Make it red, or use "text" for black
+                color: "primary", // Red
                 textShadow: "0 2px 8px #fff8",
               }}
             >
@@ -160,7 +159,7 @@ export default function HomePage() {
                 fontSize: [3, 4],
                 mb: [4, 5],
                 fontWeight: 500,
-                color: "background",
+                color: "text", // Black
                 opacity: 0.95
               }}
             >
@@ -198,20 +197,21 @@ export default function HomePage() {
                 as="a"
                 href="https://apply.hackclub.com/"
                 sx={{
-                  bg: "transparent",
-                  color: "background",
+                  bg: "background", // Make button background white
+                  color: "primary", // Make text red and always visible
                   border: "2px solid",
-                  borderColor: "background",
+                  borderColor: "primary",
                   fontWeight: "bold",
                   fontSize: [3, 4],
                   px: [4, 5],
                   py: [3, 3],
                   borderRadius: 999,
                   boxShadow: "0 2px 12px #0001",
-                  transition: "transform 0.14s, background 0.2s, color 0.2s",
+                  transition: "transform 0.14s, background 0.2s, color 0.2s, border-color 0.2s",
                   "&:hover": {
-                    bg: "background",
-                    color: "primary"
+                    bg: "primary",
+                    color: "background",
+                    borderColor: "primary"
                   }
                 }}
               >
