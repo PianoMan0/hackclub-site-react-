@@ -12,7 +12,7 @@ const navLinks = [
   { href: "https://hackclub.com/philosophy/", label: "Philosophy" },
 ];
 
-// --------- FEATURED PROJECTS (EDITABLE) ----------
+// --------- FEATURED PROJECTS ----------
 // I'll replace this with new projects frequently!
 const FEATURED_PROJECTS = [
   {
@@ -123,7 +123,7 @@ function DarkModeToggle({ colorMode, setColorMode }) {
   );
 }
 
-// --------- FEATURED PROJECT COMPONENT ----------
+// --------- FEATURED PROJECTS ----------
 function FeaturedProject({ project }) {
   return (
     <Box
@@ -226,7 +226,7 @@ function FeaturedProject({ project }) {
   );
 }
 
-// --------- COMMUNITY STATS COMPONENT ----------
+// --------- COMMUNITY STATS ----------
 function CommunityStats() {
   return (
     <Box
@@ -302,7 +302,7 @@ function CommunityStats() {
   );
 }
 
-// --------- FOOTER COMPONENT ----------
+// --------- FOOTER ----------
 function Footer() {
   return (
     <Box
@@ -397,8 +397,7 @@ export default function HomePage({ colorMode, setColorMode }) {
       <Head>
         <title>Hack Club - A Home For High School Hackers</title>
       </Head>
-
-      {/* Navbar */}
+    
       <Box as="nav" sx={{
         bg: "background",
         boxShadow: "0 2px 4px rgba(0,0,0,0.08)",
@@ -622,13 +621,10 @@ export default function HomePage({ colorMode, setColorMode }) {
         </Box>
       </Box>
 
-      {/* Featured Project Section (random each reload) */}
       <FeaturedProject project={randomProject} />
 
-      {/* Community Stats Section */}
       <CommunityStats />
 
-      {/* Footer */}
       <Footer />
     </>
   );
