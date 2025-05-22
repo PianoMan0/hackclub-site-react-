@@ -212,6 +212,78 @@ export default function HomePage() {
         )}
       </Box>
 
+      {/* Community Stats Section */}
+      <Box
+        as="section"
+        sx={{
+          py: [6, 7],
+          bg: "primary",
+          color: "background",
+          textAlign: "center"
+        }}
+      >
+        <Heading as="h2" sx={{
+          fontSize: [4, 5, 6],
+          fontWeight: 900,
+          mb: [3, 4]
+        }}>
+          Join Our Vibrant Community
+        </Heading>
+        <Text sx={{
+          fontSize: [2, 3],
+          mb: [5, 5, 6],
+          display: "block"
+        }}>
+          Connect with fellow hackers, share your projects, and learn together
+        </Text>
+        <Grid
+          columns={[1, 3, 3]}
+          gap={[4, 5]}
+          sx={{
+            maxWidth: 900,
+            mx: "auto",
+            alignItems: "center"
+          }}
+        >
+          <Box>
+            <Text as="div" sx={{
+              fontWeight: 900,
+              fontSize: [5, 6],
+              lineHeight: 1.1
+            }}>
+              600<span sx={{ fontSize: [4, 5] }}>+</span>
+            </Text>
+            <Text sx={{ fontSize: [2, 3], mt: 2, fontWeight: 500 }}>
+              Active Clubs
+            </Text>
+          </Box>
+          <Box>
+            <Text as="div" sx={{
+              fontWeight: 900,
+              fontSize: [5, 6],
+              lineHeight: 1.1
+            }}>
+              30,000<span sx={{ fontSize: [4, 5] }}>+</span>
+            </Text>
+            <Text sx={{ fontSize: [2, 3], mt: 2, fontWeight: 500 }}>
+              Members
+            </Text>
+          </Box>
+          <Box>
+            <Text as="div" sx={{
+              fontWeight: 900,
+              fontSize: [5, 6],
+              lineHeight: 1.1
+            }}>
+              10k<span sx={{ fontSize: [4, 5] }}>+</span>
+            </Text>
+            <Text sx={{ fontSize: [2, 3], mt: 2, fontWeight: 500 }}>
+              Projects Created
+            </Text>
+          </Box>
+        </Grid>
+      </Box>
+
       {/* About Section */}
       <Box as="section" id="about" sx={{ py: [5, 6], bg: "muted" }}>
         <Box sx={{ maxWidth: 1000, mx: "auto" }}>
