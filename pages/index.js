@@ -23,6 +23,13 @@ const FEATURED_PROJECTS = [
     linkLabel: "Check it out →"
   },
   {
+    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/160c7c66b5509c2c4297a60336ccaab163499552_image.png",
+    title: "Aga Tool",
+    description: "A multitool bookmarklet that you can use to do... anything!",
+    link: "http://hacklet.hackclub.com",
+    linkLabel: "Learn how to make your own bookmarklet →"
+  },
+  {
     image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/33954a9dcbc95476ecf5776e5f4687694bf0d0df_image.png",
     title: "TBHandheld",
     description: "A ESP8266 based Gaming Handheld that has support for IoT applications too!",
