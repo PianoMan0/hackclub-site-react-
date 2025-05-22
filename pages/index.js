@@ -13,29 +13,42 @@ const navLinks = [
 ];
 
 // --------- FEATURED PROJECTS (EDITABLE) ----------
-// I'll replace this with new projects frequently!
 const FEATURED_PROJECTS = [
   {
-    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/96ead81a7069ff06ad0c206883fa29b9fd4b4e41_image.png",
+    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+    title: "Laser Harp",
+    description: "A musical instrument you play by breaking laser beams, built by club members with Arduino, electronics, and a lot of creativity!",
+    link: "https://github.com/hackclub",
+    linkLabel: "Check it out →"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
+    title: "Hack Club Bank",
+    description: "A financial platform for student-led organizations to manage funds transparently. Built by and for Hack Clubbers!",
+    link: "https://hackclub.com/bank/",
+    linkLabel: "Check it out →"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+    title: "Blot",
+    description: "A collaborative drawing app for club meetings and hackathons—code, doodle, and create together in real time!",
+    link: "https://github.com/hackclub/blot",
+    linkLabel: "Check it out →"
+  },
+  {
+    image: "https://i.imgur.com/9V0N7lE.png",
     title: "Lucas 11 Personal Website",
     description: "An personal website for Lucas11 that it has all of their personal projects!",
     link: "https://lucas11.dev/",
     linkLabel: "Check it out →"
   },
   {
-    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/160c7c66b5509c2c4297a60336ccaab163499552_image.png",
-    title: "AgaTool",
-    description: "A multitool bookmarklet that you can use to do... anything!",
-    link: "http://hacklet.hackclub.com",
-    linkLabel: "Learn how to make your own bookmarklet →"
-  },
-  {
-    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/33954a9dcbc95476ecf5776e5f4687694bf0d0df_image.png",
+    image: "https://i.imgur.com/9lW0jA9.png",
     title: "TBHandheld",
     description: "A ESP8266 based Gaming Handheld that has support for IoT applications too!",
-    link: "https://highway.hackclub.com/",
+    link: "https://example.com/hardware-projects",
     linkLabel: "Learn how to make your own hardware projects →"
-  },
+  }
 ];
 
 // --------- ANIMATION ----------
@@ -96,6 +109,32 @@ const heroButtonSx = {
     transform: "scale(1.06)"
   }
 };
+
+// --------- DARK MODE TOGGLE ----------
+function DarkModeToggle({ colorMode, setColorMode }) {
+  return (
+    <Button
+      aria-label="Toggle dark mode"
+      sx={{
+        bg: "muted",
+        color: "text",
+        borderRadius: 999,
+        fontSize: 3,
+        px: 3,
+        py: 2,
+        ml: [2, 3],
+        border: "none",
+        boxShadow: "0 2px 12px #0001",
+        cursor: "pointer",
+        "&:hover": { bg: "primary", color: "background" }
+      }}
+      onClick={() => setColorMode(colorMode === "dark" ? "light" : "dark")}
+      title="Toggle dark mode"
+    >
+      {colorMode === "dark" ? "☀️ Light" : "🌙 Dark"}
+    </Button>
+  );
+}
 
 // --------- FEATURED PROJECT COMPONENT ----------
 function FeaturedProject({ project }) {
@@ -360,7 +399,7 @@ function Footer() {
 }
 
 // --------- MAIN PAGE ----------
-export default function HomePage() {
+export default function HomePage({ colorMode, setColorMode }) {
   const [showHero, setShowHero] = useState(false);
 
   // Pick a random featured project on each reload
@@ -426,6 +465,9 @@ export default function HomePage() {
                 }}>
                 Join Slack
               </ThemeLink>
+            </li>
+            <li>
+              <DarkModeToggle colorMode={colorMode} setColorMode={setColorMode} />
             </li>
           </Flex>
         </Flex>
