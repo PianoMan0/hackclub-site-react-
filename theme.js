@@ -16,7 +16,7 @@ export default {
     }
   },
   fonts: {
-    body: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+    body: "'Phantom Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
   },
   buttons: {
     primary: {
