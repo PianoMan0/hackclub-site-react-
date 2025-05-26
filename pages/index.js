@@ -624,7 +624,7 @@ export default function HomePage() {
             </Flex>
             <Button
               as="a"
-              href="#"
+              href="https://shipwrecked.hack.club/3"
               sx={wideSignupButtonSx}
             >
               Sign up: Private Island Hackathon
