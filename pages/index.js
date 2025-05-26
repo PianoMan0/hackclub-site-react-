@@ -13,36 +13,42 @@ const navLinks = [
 ];
 
 // --------- FEATURED PROJECTS (EDITABLE) ----------
-// I'll replace this with new projects frequently!
 const FEATURED_PROJECTS = [
   {
-    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/96ead81a7069ff06ad0c206883fa29b9fd4b4e41_image.png",
+    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+    title: "Laser Harp",
+    description: "A musical instrument you play by breaking laser beams, built by club members with Arduino, electronics, and a lot of creativity!",
+    link: "https://github.com/hackclub",
+    linkLabel: "Check it out →"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
+    title: "Hack Club Bank",
+    description: "A financial platform for student-led organizations to manage funds transparently. Built by and for Hack Clubbers!",
+    link: "https://hackclub.com/bank/",
+    linkLabel: "Check it out →"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+    title: "Blot",
+    description: "A collaborative drawing app for club meetings and hackathons—code, doodle, and create together in real time!",
+    link: "https://github.com/hackclub/blot",
+    linkLabel: "Check it out →"
+  },
+  {
+    image: "https://i.imgur.com/9V0N7lE.png",
     title: "Lucas 11 Personal Website",
     description: "An personal website for Lucas11 that it has all of their personal projects!",
     link: "https://lucas11.dev/",
     linkLabel: "Check it out →"
   },
   {
-    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/160c7c66b5509c2c4297a60336ccaab163499552_image.png",
-    title: "AgaTool",
-    description: "A multitool bookmarklet that you can use to do... anything!",
-    link: "http://hacklet.hackclub.com",
-    linkLabel: "Learn how to make your own bookmarklet →"
-  },
-  {
-    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4cf116ff6ce6c5dc8329fba8ee36123b1b815341_image.png",
-    title: "Hackatime Badge",
-    description: "An API that takes in a Hackatime username and project name (Hackatime is how Hack Clubbers track their coding time!), and outputs a Shields.io badge with the time spent on that project, with lots of customization options!",
-    link: "https://github.com/pbhak/hackatime-badge",
-    linkLabel: "Check it out →"
-  },
-  {
-    image: "https://hc-cdn.hel1.your-objectstorage.com/s/v3/33954a9dcbc95476ecf5776e5f4687694bf0d0df_image.png",
+    image: "https://i.imgur.com/9lW0jA9.png",
     title: "TBHandheld",
     description: "A ESP8266 based Gaming Handheld that has support for IoT applications too!",
-    link: "https://highway.hackclub.com/",
+    link: "https://example.com/hardware-projects",
     linkLabel: "Learn how to make your own hardware projects →"
-  },
+  }
 ];
 
 // --------- ANIMATION ----------
@@ -102,6 +108,18 @@ const heroButtonSx = {
     borderColor: "primary",
     transform: "scale(1.06)"
   }
+};
+
+// --------- WIDE SIGNUP BUTTON STYLE ----------
+const wideSignupButtonSx = {
+  ...heroButtonSx,
+  mt: [4, 5],
+  width: ["90vw", "60vw", "40vw"],
+  mx: "auto",
+  display: "block",
+  fontSize: [3, 4, 5],
+  borderRadius: 32,
+  textAlign: "center"
 };
 
 // --------- DARK MODE TOGGLE ----------
@@ -545,7 +563,7 @@ export default function HomePage() {
         sx={{
           width: "100%",
           minHeight: ["60vh", "70vh", "70vh"],
-          pt: [88, 120, 140, 180],
+          pt: [120, 140, 180],
           pb: [5, 6],
           bg: "linear-gradient(120deg, #ec3750 0%, #ff8c37 100%)",
           display: "flex",
@@ -610,6 +628,13 @@ export default function HomePage() {
                 Start a Club
               </Button>
             </Flex>
+            <Button
+              as="a"
+              href="#"
+              sx={wideSignupButtonSx}
+            >
+              Sign up: Private Island Hackathon
+            </Button>
           </Box>
         )}
       </Box>
@@ -701,13 +726,10 @@ export default function HomePage() {
         </Box>
       </Box>
 
-      {/* Featured Project Section (random each reload) */}
       <FeaturedProject project={randomProject} />
 
-      {/* Community Stats Section */}
       <CommunityStats />
 
-      {/* Footer */}
       <Footer />
     </>
   );
